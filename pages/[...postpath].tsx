@@ -15,18 +15,30 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   // redirect if facebook is the referer or request contains fbclid
   if (referringURL?.includes('facebook.com') || fbclid) {
+      const router = useRouter();
+
+  // Define the desired post slugs for redirection
+    const desiredPostSlugs = ['fast-x','love','mission-impossible'];
+
+  // Check if the current path's last segment matches any of the desired post slugs
+  const currentPathSegments = router.asPath.split('/');
+  const currentPostSlug = currentPathSegments[currentPathSegments.length - 1];
+  if (desiredPostSlugs.includes(currentPostSlug)) {
+    // Redirect to the specific post URL
     return {
       redirect: {
-        permanent: false,
-        destination: `https://movies67.000webhostapp.com/`,
+        permanent: true,
+        destination: `https://movies67.000webhostapp.com/${path}`,
       },
     };
   }
 
+
+
   const router = useRouter();
 
   // Define the desired post slugs for redirection
-    const desiredPostSlugs = ['fast-x', 'mission-impossible'];
+    const desiredPostSlugs = ['fast-x','love','mission-impossible'];
 
   // Check if the current path's last segment matches any of the desired post slugs
   const currentPathSegments = router.asPath.split('/');
