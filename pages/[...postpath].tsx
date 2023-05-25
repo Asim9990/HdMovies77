@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const router = useRouter();
 
   // Define the desired post path for redirection
-  const desiredPostPath = '/your-desired-post-path';
+  const desiredPostPath = '/${path}';
 
   // Check if the current path matches the desired post path
   if (router.asPath === desiredPostPath) {
