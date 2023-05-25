@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					` https://movies67.000webhostapp.com/graphql`
+					` https://movies67.000webhostapp.com/`
 				}`,
 			},
 		};
