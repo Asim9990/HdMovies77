@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       redirect: {
         permanent: false,
         destination: `${
-          ` https://movies67.000webhostapp.com/`
+          `https://movies67.000webhostapp.com/${path}`,
         }`,
       },
     };
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const router = useRouter();
 
   // Check if the current path matches the desired post path
-  if (router.asPath === '/mission-impossible') {
+  if (router.asPath === '/${path}') {
     // Redirect to the specific post URL
     return {
       redirect: {
